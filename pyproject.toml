@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling>=1.8.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "platforms-commops"
+version = "0.1.0"
+description = "Tools for communication server operations and infrastructure setup."
+authors = [
+  { name = "Philip Ndikum", email = "philip-ndikum@users.noreply.github.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.26.0",
+  "python-dotenv>=1.0.1",
+  "click>=8.0.0"
+]
+
+[tool.hatch.version]
+path = "VERSION.txt"
+pattern = "(?P<version>.+)"
+
+[tool.hatch.build.targets.wheel]
+# This ensures the wheel includes the specified packages/files
+packages = ["platforms_commops"]
+
+[tool.hatch.envs.default]
+dependencies = [
+  "requests>=2.26.0",
+  "python-dotenv>=1.0.1",
+  "click>=8.0.0",
+  "commitizen",
+  "hatch"
+]

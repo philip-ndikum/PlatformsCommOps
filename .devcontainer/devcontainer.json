@@ -1,0 +1,13 @@
+{
+  "name": "PlatformsCommOps Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "postCreateCommand": "pip install hatch && hatch env create",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "EditorConfig.EditorConfig"
+      ]
+    }
+  }
+}
